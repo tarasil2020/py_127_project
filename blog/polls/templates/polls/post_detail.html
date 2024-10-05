@@ -1,0 +1,34 @@
+{% extends 'polls/index.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ post.title }}</title>
+</head>
+<body>
+{% block content %}
+
+<p>
+    <b>Title:</b>{{ post.title }}
+
+</p>
+<p>
+    <b>Content:</b>{{ post.content }}
+
+</p>
+<p>
+    <b>Likes:</b>{{ post.number_of_likes }}<button><a href="{% url 'add_like' post.pk %}">Like</a></button>
+
+</p>
+<p>
+    <b>Created Date:</b>{{ post.create_date }}
+
+</p>
+<p>
+    <b>Updated Date:</b>{{ post.update_date }}
+
+</p>
+
+{% endblock %}
+</body>
+</html>

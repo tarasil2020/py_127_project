@@ -10,5 +10,18 @@
 {% block header %}
 <a href="{% url 'index' %}">Index</a>
 {% endblock %}
+
+{% block content %}
+{% for post in posts %}
+    <p>
+        <a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a>
+    </p>
+{% endfor %}
+{% for author in authors %}
+    <p>
+        <a href="{% url 'author_page' author.pk %}">{{ author.first_name }} {{ author.last_name }}</a>
+    </p>
+{% endfor %}
+{% endblock %}
 </body>
 </html>
